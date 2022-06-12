@@ -5,12 +5,15 @@
 
 Console.Write("Введите трехзначное число: ");
 int FullNumber = Convert.ToInt32(Console.ReadLine());
-if (FullNumber < 100 || FullNumber > 999) 
+if (FullNumber < -999 || ((FullNumber > -100) && (FullNumber < 100)) || FullNumber > 999)
 {
     Console.WriteLine("Введенное число - не трехзначное");
 }
+else if (FullNumber > 99)
+{
+    Console.WriteLine($"Вторая цифра числа = {FullNumber / 10 % 10}");
+}
 else
 {
-    int SecondNumber = (FullNumber / 10) % 10;
-    Console.WriteLine(SecondNumber);
+    Console.WriteLine($"Вторая цифра числа = {FullNumber / 10 % 10 * (-1)}");
 }

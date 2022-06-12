@@ -4,12 +4,24 @@
 
 Console.Write("Введите любое число: ");
 string Number = Console.ReadLine();
-int length = Number.Length;
-if (length < 3)
-{
-    Console.WriteLine ("Третьей цифры нет");
+if (Convert.ToString(Number[0]) == "-") // ветка для отрицательных чисел
+    if (Number.Length < 4)
+    {
+        Console.WriteLine("Третьей цифры нет");
+    }
+    else
+    {
+        Console.WriteLine($"Третья цифра числа = {Number[3]}");
+    }
 }
 else
 {
-    Console.WriteLine(Number[2]);
+    if (Number.Length < 3) // ветка для положительных чисел и 0
+    {
+        Console.WriteLine("Третьей цифры нет");
+    }
+    else
+    {
+        Console.WriteLine($"Третья цифра числа = {Number[2]}");
+    }
 }
